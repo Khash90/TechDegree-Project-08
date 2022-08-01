@@ -1,5 +1,5 @@
 let employees = [];
-const urlAPI = `https://randomuser.me/api/?results=12&inc=name,picture,email,location,phone,dob&noinfo&nat=US`;
+const urlAPI = ` https://fsjs-public-api-backup.herokuapp.com/api `;
 const gridContainer = document.querySelector('.grid-container');
 const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector(".modal-content");
@@ -29,7 +29,7 @@ function displayEmployees(employeeData) {
     <div class="card" data-index="${index}">
     <img class="avatar" src="${picture.large}" />
     <div class="text-container">
-    <h2 class="name">${name.first} ${name.last}</h2>
+    <h4 class="name">${name.first} ${name.last}</h4>
     <p class="email">${email}</p>
     <p class="address">${city}</p>
     </div>
@@ -81,7 +81,7 @@ function displayModal(index) {
 
  modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
-    // document.body.style.overflow = "auto";
+    document.body.style.overflow = "auto";
     });
     
 
