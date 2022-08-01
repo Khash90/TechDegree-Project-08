@@ -1,0 +1,31 @@
+.card {
+    width: 300px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid rgb(180, 180, 214);
+    justify-content:flex-end;
+    border-radius: 5px;
+    margin: 10px auto;
+    .text-container{
+        margin-left: 10px;
+    }
+    .name{
+        margin-right: 93px;
+        margin-top: 40px;
+    }
+    .email{
+        margin-top: -14px;
+    }
+    .address{
+        margin-top: -7px;
+    }
+}
+img{
+    border-radius: 50%;
+    width: 30%;
+    height: 63%;
+    margin-top: 27px;
+    margin-left: 16px;
+    margin-right: auto;
+}
