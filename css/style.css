@@ -438,4 +438,24 @@ h1 {
   margin: 26px 4px;
 }
 
+.rightButton,
+.leftButton {
+  font-size: large;
+  color: rgba(34, 27, 74, 0.78);
+  position: absolute;
+  height: 30px;
+}
+
+.rightButton {
+  top: 50%;
+  right: 0;
+  transition: translateY(-50%);
+}
+
+.leftButton {
+  top: 50%;
+  left: 0;
+  transition: translateY(-50%);
+}
+
 /*# sourceMappingURL=style.css.map */

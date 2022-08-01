@@ -42,13 +42,15 @@ function displayEmployees(employeeData) {
 
 //Modal
 
-function displayModal(index) {
+function displayModal(index,employee) {
 
     // use object destructuring make our template literal cleaner
     let { name, dob, phone, email, location: { city, street, state, postcode
     }, picture } = employees[index];
     let date = new Date(dob.date);
     const modalHTML = `
+    <button class="rightButton modalButton">&#62;</button>
+    <button class="leftButton modalButton">&#60;</button>
     <img class="avatar" src="${picture.large}" />
     <div class="text-container">
     <h2 class="name">${name.first} ${name.last}</h2>
@@ -63,8 +65,32 @@ function displayModal(index) {
     `;
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
+
+      // **** variables to select for buttons **** 
+      rightBtn = document.querySelector('.rightButton');
+      leftBtn = document.querySelector('.leftButton');
+  
+      // **** event listeners to scroll through modal cards ****
+      rightBtn.addEventListener('click', () =>{
+          nextCard(employee);
+      });
+  
+      leftBtn.addEventListener('click', () => {
+          previousCard(employee);
+      });
  }
  
+//next and previous cards
+
+ function nextCard(employees) {
+
+  }
+  
+  
+  function previousCard(employees) {
+    
+ 
+  }
 
  //eventListener 
 
@@ -78,10 +104,18 @@ function displayModal(index) {
     }
  });
 
+ //filter search
+ 
+
+
 
  modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
     document.body.style.overflow = "auto";
     });
     
+
+//buttons
+
+
 
