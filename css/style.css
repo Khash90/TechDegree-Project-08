@@ -408,16 +408,16 @@ h1 {
 }
 
 .card {
-  width: 300px;
   height: 150px;
+  display: flex;
+  flex-direction: row;
   border: 2px solid rgb(180, 180, 214);
   justify-content: flex-end;
   border-radius: 5px;
   margin: 10px auto;
 }
 .card .text-container {
-  float: right;
-  margin-right: 50px;
+  display: inline-block;
   text-align: left;
 }
 .card .name {
@@ -432,7 +432,6 @@ h1 {
 
 .avatar {
   border-radius: 50%;
-  width: 30%;
   height: 63%;
   margin-top: 27px;
   margin-left: 16px;
