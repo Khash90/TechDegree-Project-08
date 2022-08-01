@@ -1,14 +1,16 @@
 .card {
     width: 300px;
     height: 150px;
-    display: flex;
-    flex-direction: row;
+    // display: flex;
+    // flex-direction: row;
     border: 2px solid rgb(180, 180, 214);
     justify-content:flex-end;
     border-radius: 5px;
     margin: 10px auto;
     .text-container{
-        margin-left: 10px;
+        float: right;
+        margin-right: 50px;
+        text-align: left;
     }
     .name{
         
