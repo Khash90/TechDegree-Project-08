@@ -1,33 +1,32 @@
-.card {
-    
-    height: 150px;
+
+
+.card{
+    border: 1px solid rgb(193, 193, 214);
+    border-radius: 7px;
     display: flex;
+    /* flex-wrap: wrap; */
     flex-direction: row;
-    border: 2px solid rgb(180, 180, 214);
-    justify-content:flex-end;
-    border-radius: 5px;
-    margin: 10px auto;
-    .text-container{
-       
-        display: inline-block;
-        text-align: left;
-    }
+    flex-basis: 32%;
+    margin: 0 auto;
+    width: 30%;
     .name{
-        
-        margin-top: 40px;
-    }
-    .email{
-        margin-top: -14px;
-    }
-    .address{
-        margin-top: -7px;
+        margin-top: 37px;
+        margin-left: 10px;
+        margin-bottom: -9px;
     }
 }
+
+.text-container p{
+    margin-left: 10px;
+  
+}
+.address{
+    margin-top: -8px;
+}
 .avatar{
-    border-radius: 50%;
     
-    height: 63%;
-    margin-top: 27px;
-    margin-left: 16px;
-    margin-right: auto;
+    border-radius: 50%;
+    width: 25%;
+    height: 60%;
+    margin: 26px 4px;
 }
