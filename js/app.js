@@ -42,11 +42,13 @@ function displayEmployees(employeeData) {
 
 //Modal
 
-function displayModal(index,employee) {
+function displayModal(index) {
 
     // use object destructuring make our template literal cleaner
-    let { name, dob, phone, email, location: { city, street, state, postcode
+    let { name, dob, phone, email,
+         location: { city, street, state, postcode
     }, picture } = employees[index];
+    
     let date = new Date(dob.date);
     const modalHTML = `
     <button class="rightButton modalButton">&#62;</button>
@@ -58,7 +60,7 @@ function displayModal(index,employee) {
     <p class="address">${city}</p>
     <hr />
     <p>${phone}</p>
-    <p class="address">${street}, ${state} ${postcode}</p>
+    <p class="address">${street.number},${street.name}, ${state} ${postcode}</p>
     <p>Birthday:
     ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
     </div>
@@ -66,31 +68,11 @@ function displayModal(index,employee) {
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
 
-      // **** variables to select for buttons **** 
-      rightBtn = document.querySelector('.rightButton');
-      leftBtn = document.querySelector('.leftButton');
-  
-      // **** event listeners to scroll through modal cards ****
-      rightBtn.addEventListener('click', () =>{
-          nextCard(employee);
-      });
-  
-      leftBtn.addEventListener('click', () => {
-          previousCard(employee);
-      });
+     
  }
  
 //next and previous cards
 
- function nextCard(employees) {
-
-  }
-  
-  
-  function previousCard(employees) {
-    
- 
-  }
 
  //eventListener 
 
