@@ -5,8 +5,7 @@ const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
 let employeesIndex;
-const rightbtn = document.querySelector(".rightButton");
-const leftButton = document.querySelector(".leftButton");
+
 
 
 // use fetch to retrieve info from the API
@@ -54,8 +53,8 @@ function displayModal(index) {
     employeesIndex = employees.indexOf(employees[index]);
     let date = new Date(dob.date);
     const modalHTML = `
-    <button class="rightButton ">&#62;</button>
-    <button class="leftButton ">&#60;</button>
+    <button class="rightButton ">&#10095;</button>
+    <button class="leftButton ">&#10094;</button>
     <img class="avatar" src="${picture.large}" />
     <div class="text-container">
     <h2 class="name">${name.first} ${name.last}</h2>
@@ -70,28 +69,34 @@ function displayModal(index) {
     `;
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
-    rightbtn.addEventListener("click", nextCard);
-    leftButton.addEventListener("click", previousCard);
+
+    //declaring next and prev buttons
+    const rightBtn = document.querySelector(".rightButton");
+    const leftBtn = document.querySelector(".leftButton");
+    rightBtn.addEventListener("click", nextCard);
+    leftBtn.addEventListener("click", previousCard);
+
+    //next card function
+    function nextCard() {
+        if (employeesIndex < 11) {
+          displayModal((employeesIndex += 1));
+          
+        } 
+      }
+    
+      // previous card function
+      function previousCard() {
+        if (employeesIndex > 0) {
+          displayModal((employeesIndex -= 1));
+        }
+      }
+    
  }
  
 
- 
-// next card function
-function nextCard() {
-    if (employeesIndex < 11) {
-      displayModal((employeesIndex += 1));
-    } 
-   
-  }
-  
-  // previous card function
-  function previousCard() {
-    if (employeesIndex > 0) {
-      displayModal((employeesIndex -= 1));
-      
-    }
- 
-  }
+
+
+
 
 
  //eventListener 
@@ -110,8 +115,8 @@ function nextCard() {
  function searchFilter() {
     const employeeNames = document.getElementsByClassName("name");
     const searchFilter = userInput.value.toUpperCase();
-    const employeeArr = [...employeeNames];
-    employeeArr.forEach((employee) => {
+    const users = [...employeeNames];
+    users.forEach((employee) => {
       if (employee.innerHTML.toUpperCase().indexOf(searchFilter) > -1) {
         employee.closest(".card").style.display = "flex";
       } else {
