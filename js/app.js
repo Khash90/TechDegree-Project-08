@@ -4,6 +4,7 @@ const gridContainer = document.querySelector('.grid-container');
 const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
+let employeesIndex;
 
 
 // use fetch to retrieve info from the API
@@ -48,11 +49,11 @@ function displayModal(index) {
     let { name, dob, phone, email,
          location: { city, street, state, postcode
     }, picture } = employees[index];
-    
+    employeesIndex = employees.indexOf(employees[index]);
     let date = new Date(dob.date);
     const modalHTML = `
-    <button class="rightButton modalButton">&#62;</button>
-    <button class="leftButton modalButton">&#60;</button>
+    <button class="rightButton ">&#62;</button>
+    <button class="leftButton ">&#60;</button>
     <img class="avatar" src="${picture.large}" />
     <div class="text-container">
     <h2 class="name">${name.first} ${name.last}</h2>
@@ -87,17 +88,53 @@ function displayModal(index) {
  });
 
  //filter search
- 
+ const userInput = document.getElementById("search");
+ function searchFilter() {
+    const employeeNames = document.getElementsByClassName("name");
+    const searchFilter = userInput.value.toUpperCase();
+    const employeeArr = [...employeeNames];
+    employeeArr.forEach((employee) => {
+      if (employee.innerHTML.toUpperCase().indexOf(searchFilter) > -1) {
+        employee.closest(".card").style.display = "flex";
+      } else {
+        employee.closest(".card").style.display = "none";
+      }
+    });
+  }
 
 
-
+  userInput.addEventListener("keyup", searchFilter);
  modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
     document.body.style.overflow = "auto";
     });
     
 
+
+   
+    
+
 //buttons
+const rightbtn = document.querySelector(".rightButton");
+const leftButton = document.querySelector(".leftButton");
+// next card function
+function nextCard() {
+    if (employeesIndex < 11) {
+      displayModal((employeesIndex += 1));
+    } 
+    
+  }
+  rightbtn.addEventListener("click", nextCard);
+  
+  // previous card function
+  function previousCard() {
+    if (employeesIndex > 0) {
+      displayModal((employeesIndex -= 1));
+      
+    }
+    
+  }
+  leftButton.addEventListener("click", previousCard);
 
 
 
