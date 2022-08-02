@@ -5,6 +5,8 @@ const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
 let employeesIndex;
+const rightbtn = document.querySelector(".rightButton");
+const leftButton = document.querySelector(".leftButton");
 
 
 // use fetch to retrieve info from the API
@@ -68,15 +70,31 @@ function displayModal(index) {
     `;
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
-
-     
+    rightbtn.addEventListener("click", nextCard);
+    leftButton.addEventListener("click", previousCard);
  }
  
 
+ 
+// next card function
+function nextCard() {
+    if (employeesIndex < 11) {
+      displayModal((employeesIndex += 1));
+    } 
+   
+  }
+  
+  // previous card function
+  function previousCard() {
+    if (employeesIndex > 0) {
+      displayModal((employeesIndex -= 1));
+      
+    }
+ 
+  }
 
 
  //eventListener 
-
  gridContainer.addEventListener('click', e => {
     //make sure the click is not on the gridcontainer itself
     if (e.target !== gridContainer){
@@ -103,38 +121,8 @@ function displayModal(index) {
   }
 
 
-  userInput.addEventListener("keyup", searchFilter);
- modalClose.addEventListener('click', () => {
+userInput.addEventListener("keyup", searchFilter);
+modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
     document.body.style.overflow = "auto";
 });
-    
-
-
-   
-    
-
-//buttons
-const rightbtn = document.querySelector(".rightButton");
-const leftButton = document.querySelector(".leftButton");
-// next card function
-function nextCard() {
-    if (employeesIndex < 11) {
-      displayModal((employeesIndex += 1));
-    } 
-    
-  }
-  rightbtn.addEventListener("click", nextCard);
-  
-  // previous card function
-  function previousCard() {
-    if (employeesIndex > 0) {
-      displayModal((employeesIndex -= 1));
-      
-    }
-    
-  }
-  leftButton.addEventListener("click", previousCard);
-
-
-
