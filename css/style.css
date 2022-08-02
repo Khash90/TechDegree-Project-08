@@ -442,7 +442,7 @@ h1 {
 .rightButton,
 .leftButton {
   font-size: large;
-  color: rgba(34, 27, 74, 0.78);
+  color: rgba(179, 175, 206, 0.78);
   position: absolute;
   height: 30px;
 }
@@ -450,11 +450,29 @@ h1 {
 .rightButton {
   top: 50%;
   right: 0;
+  background-color: rgb(28, 19, 65);
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+}
+.rightButton:hover {
+  cursor: pointer;
+  background-color: rgb(138, 135, 196);
+  color: rgba(32, 28, 63, 0.78);
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 .leftButton {
   top: 50%;
   left: 0;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: rgb(28, 19, 65);
+}
+.leftButton:hover {
+  cursor: pointer;
+  background-color: rgb(138, 135, 196);
+  color: rgba(32, 28, 63, 0.78);
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 @media (min-width: 1400px) {
