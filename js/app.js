@@ -55,7 +55,7 @@ function displayModal(index) {
     const modalHTML = `
     <button class="rightButton ">&#10095;</button>
     <button class="leftButton ">&#10094;</button>
-    <img class="avatar" src="${picture.large}" />
+    <img id="profilePic" class="avatar" src="${picture.large}" />
     <div class="text-container">
     <h2 class="name">${name.first} ${name.last}</h2>
     <p class="email">${email}</p>

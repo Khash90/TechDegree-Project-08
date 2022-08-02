@@ -439,6 +439,10 @@ h1 {
   margin: 26px 4px;
 }
 
+#profilePic {
+  width: 130px;
+}
+
 .rightButton,
 .leftButton {
   font-size: large;
