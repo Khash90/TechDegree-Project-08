@@ -370,12 +370,13 @@ h1 {
 }
 
 .overlay {
+  color: black;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(100, 100, 100, 0.4);
+  background: rgba(33, 9, 46, 0.4);
 }
 
 .grid {
@@ -449,13 +450,64 @@ h1 {
 .rightButton {
   top: 50%;
   right: 0;
-  transition: translateY(-50%);
 }
 
 .leftButton {
   top: 50%;
   left: 0;
-  transition: translateY(-50%);
+}
+
+@media (min-width: 1400px) {
+  header {
+    margin-left: 43px;
+  }
+
+  .card {
+    border: 1px solid rgb(193, 193, 214);
+    border-radius: 7px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: row;
+    flex-basis: 32%;
+    margin: 0 auto;
+    width: 30%;
+  }
+  .card .name {
+    margin-top: 37px;
+    margin-left: 10px;
+    margin-bottom: -9px;
+  }
+
+  .text-container {
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .address {
+    margin-top: -8px;
+  }
+
+  .avatar {
+    border-radius: 50%;
+    width: 25%;
+    height: 65%;
+    margin: 26px 18px;
+  }
+}
+body {
+  background-color: rgb(35, 35, 56);
+  color: white;
+}
+
+.card {
+  background-color: rgb(54, 54, 100);
+  border-color: rgb(86, 158, 86);
+}
+.card:hover {
+  cursor: pointer;
+  background-color: rgb(29, 114, 92);
+  transition: background-color 0.5s ease-in-out;
 }
 
 /*# sourceMappingURL=style.css.map */

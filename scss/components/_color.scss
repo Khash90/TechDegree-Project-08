@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(35, 35, 56);
+    color: white;
+}
+
+.card {
+    background-color: rgb(54, 54, 100);
+    border-color: rgb(86, 158, 86);
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(29, 114, 92);
+        transition: background-color .5s ease-in-out;
+    }
+}
+

@@ -72,7 +72,7 @@ function displayModal(index) {
      
  }
  
-//next and previous cards
+
 
 
  //eventListener 
@@ -107,7 +107,7 @@ function displayModal(index) {
  modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
     document.body.style.overflow = "auto";
-    });
+});
     
 
 

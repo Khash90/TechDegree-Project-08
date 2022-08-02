@@ -1,0 +1,38 @@
+@media (min-width: 1400px){
+    header{
+        margin-left: 43px;
+    }
+    .card{
+        border: 1px solid rgb(193, 193, 214);
+        border-radius: 7px;
+        display: flex;
+        /* flex-wrap: wrap; */
+        flex-direction: row;
+        flex-basis: 32%;
+        margin: 0 auto;
+        width: 30%;
+        .name{
+            margin-top: 37px;
+            margin-left: 10px;
+            margin-bottom: -9px;
+        }
+    }
+    
+    .text-container {
+        margin-left: 10px;
+        margin-top: 10px;
+        font-size: 16px;
+      
+    }
+    .address{
+        margin-top: -8px;
+    }
+    .avatar{
+        
+        border-radius: 50%;
+        width: 25%;
+        height: 65%;
+        margin: 26px 18px;
+    }
+
+}
